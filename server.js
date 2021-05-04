@@ -18,7 +18,7 @@ app.use('/api/articles', require('./routes/articles'));
 
 //serve static assests
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/build'));
+  app.use(express.static('news-app/build'));
 
   app.get('*', (req, res) =>
     res.sendFile(path.resolve(__dirname, 'news-app', 'build', 'index.html'))
