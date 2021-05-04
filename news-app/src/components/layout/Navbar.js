@@ -10,9 +10,11 @@ const Navbar = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    getSearchResults(searchField);
-    setSearchField('');
-    console.log('clicked');
+    if (searchField) {
+      getSearchResults(searchField);
+      setSearchField('');
+      // console.log('clicked');
+    }
   };
   const clearSearch = () => {
     clearFilteredNews();
@@ -32,7 +34,7 @@ const Navbar = () => {
           value={searchField}
           onChange={(e) => setSearchField(e.target.value)}
         />
-        {filteredNews.length > 0 ? (
+        {filteredNews && filteredNews.length > 0 ? (
           <button
             type='button'
             className='py-1 px-2 text-lg hover:text-blue-900'

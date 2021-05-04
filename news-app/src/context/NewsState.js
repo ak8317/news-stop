@@ -44,9 +44,9 @@ const NewsState = (props) => {
     setLoading();
 
     try {
-      const res = await axios.get(
-        `https://newsapi.org/v2/everything?q=${text}&sortBy=publishedAt&pageSize=10&apiKey=1b2d33e69afa4e589787d4eef0b8c5b9`
-      );
+      const res = await axios.post('/api/articles', {
+        query: text,
+      });
       dispatch({
         type: LOAD_SEARCH,
         payload: res.data.articles,

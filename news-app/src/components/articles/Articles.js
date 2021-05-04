@@ -12,7 +12,7 @@ const Articles = () => {
   }
   return (
     <div className='container w-100 lg:w-4/5 mx-auto flex flex-col px-10 mb-10'>
-      {filteredNews.length > 0 ? (
+      {filteredNews && filteredNews.length > 0 ? (
         <h1 className='text-center font-bold text-3xl text-gray-400'>
           {`Showing Results for ${searchText}`}
         </h1>
